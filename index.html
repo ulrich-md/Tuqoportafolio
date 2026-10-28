@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    /* Language: ?lang= wins, then a saved choice, then the visitor's time zone, then the browser language. Spanish by default. */
+    (function () {
+      var d = document.documentElement, l = null;
+      try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+      if (l !== 'es' && l !== 'en') { try { l = localStorage.getItem('tuqo-lang'); } catch (e) {} }
+      if (l !== 'es' && l !== 'en') {
+        var tz = '';
+        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+        var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+        var spanishZone = /^(America\/(Mexico_City|Cancun|Merida|Monterrey|Matamoros|Chihuahua|Ciudad_Juarez|Ojinaga|Mazatlan|Bahia_Banderas|Hermosillo|Tijuana|Guatemala|El_Salvador|Tegucigalpa|Managua|Costa_Rica|Panama|Bogota|Lima|Guayaquil|Caracas|La_Paz|Santiago|Buenos_Aires|Argentina\/.+|Montevideo|Asuncion|Havana|Santo_Domingo|Puerto_Rico)|Europe\/Madrid|Atlantic\/Canary|Africa\/Ceuta)$/.test(tz);
+        l = spanishZone || /(^|,)es/.test(langs) ? 'es' : (/(^|,)en/.test(langs) ? 'en' : 'es');
+      }
+      d.lang = l;
+      if (l === 'en') { d.classList.add('lang-pending'); setTimeout(function () { d.classList.remove('lang-pending'); }, 1500); }
+    })();
+  </script>
+  <title>TUQO · Sitios web y agentes de IA</title>
+  <meta name="description" content="TUQO diseña sitios web y agentes de IA para marcas reales: la escritora Ángeles Mastretta, la revista Nexos, Casa Balseca, MOG México y más. Cotización gratis.">
+  <meta property="og:title" content="TUQO · Sitios web y agentes de IA">
+  <meta property="og:description" content="Sitios web y agentes de IA para marcas reales. Mira los proyectos en vivo.">
+  <meta name="theme-color" content="#141416">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Courier+Prime:wght@400;700&amp;family=Gochi+Hand&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/img/folder.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#impact" data-i18n="skip">Saltar a los proyectos</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="light" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+  <div class="lang-switch" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" lang="es">ES</button><button type="button" data-lang="en" lang="en">EN</button></div>
+
+  <main>
+    <!-- ================= COVER: the folder on the desk ================= -->
+    <section class="hero" id="top" data-bg="#141416" data-label="Inicio" data-i18n-attr="data-label:navTop">
+      <img decoding="async" class="prop keyboard-photo" data-speed="-0.4" src="assets/img/keyboard.webp" alt="" width="899" height="590">
+      <div class="prop stylus" data-speed="0.5" aria-hidden="true"></div>
+      <div class="prop floppy fg" data-speed="1.1" aria-hidden="true"><span class="fl-shutter"></span><span class="fl-label">TUQO_v0</span></div>
+      <div class="lamp-glow" aria-hidden="true"></div>
+      <img decoding="async" class="prop hero-mug" data-speed="0.25" src="assets/img/coffee.webp" alt="" width="454" height="275">
+      <img decoding="async" class="prop hero-plant" data-speed="0.6" src="assets/img/terrarium.webp" alt="" width="600" height="337">
+
+      <div class="hero-stage">
+        <div class="folder lit">
+          <span class="coffee-ring" aria-hidden="true"></span>
+          <img decoding="async" fetchpriority="high" class="folder-photo" src="assets/img/folder.webp" alt="" width="1600" height="1075" draggable="false">
+          <span class="folder-light" aria-hidden="true"></span>
+          <svg class="burst" viewBox="0 0 160 160" aria-hidden="true">
+            <polygon points="80,4 96,46 140,22 118,64 158,80 118,96 140,138 96,114 80,156 64,114 20,138 42,96 2,80 42,64 20,22 64,46"/>
+            <text x="80" y="92" text-anchor="middle">2026</text>
+          </svg>
+
+          <div class="folder-copy">
+            <p class="byline" data-i18n="byline"><b>Estudio de sitios web y agentes de IA</b> · Tehuacán, México</p>
+            <h1 class="title" aria-label="TUQO by Ulrich">
+              <span class="t-sans t-logo" aria-hidden="true"><svg class="logo-svg" role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="210 380 1510 386" fill="none" stroke="currentColor" stroke-width="45"><defs><mask id="tuqo-qcut" maskUnits="userSpaceOnUse" x="900" y="360" width="500" height="420"><rect x="900" y="360" width="500" height="420" fill="#fff" stroke="none"/><path d="M1139 593 L1467 901" stroke="#000" stroke-width="108"/></mask></defs><g class="lg lg-t"><path d="M217 417.5H505M359.5 396V724"/></g><g class="lg lg-u"><path d="M596.5 396V572A135.5 135.5 0 0 0 867.5 572V396"/></g><g class="lg lg-q"><circle cx="1130" cy="559" r="150" mask="url(#tuqo-qcut)"/><path d="M1170 650L1206 618L1339 757L1271 757Z" fill="currentColor" stroke="none"/></g><g class="lg lg-o"><circle cx="1538" cy="559" r="150"/></g></svg><span class="disc">
+                <svg viewBox="0 0 100 100">
+                  <defs><path id="ring" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+                  <text><textPath href="#ring" data-i18n="disc">ESTUDIO · WEB · IA · TUQO ·</textPath></text>
+                  <circle cx="50" cy="50" r="7"/>
+                </svg>
+              </span></span>
+              <span class="t-serif" aria-hidden="true">by Ulrich.</span>
+            </h1>
+            <p class="thesis" data-i18n="thesis">Diseñamos sitios web y agentes de IA para marcas que quieren verse y trabajar mejor en internet. Han confiado en nosotros la escritora <strong>Ángeles Mastretta</strong> y la revista <strong>Nexos</strong>.</p>
+            <dl class="spec">
+              <div><dt data-i18n="specLive">Proyectos en vivo</dt><dd>7</dd></div>
+              <div><dt data-i18n="specArchive">Archivo con IA</dt><dd data-i18n="specArchiveV">32,942 textos</dd></div>
+              <div><dt data-i18n="specClient">Cliente destacado</dt><dd>Á. Mastretta</dd></div>
+              <div><dt data-i18n="specQuote">Cotización</dt><dd data-i18n="specQuoteV">Gratis</dd></div>
+            </dl>
+            <div class="hero-ctas"><a class="btn" href="mailto:solutions.umd@gmail.com?subject=Proyecto%20con%20TUQO" data-i18n="ctaQuote">Cotiza tu proyecto <span aria-hidden="true">→</span></a><a class="btn-ghost" href="#impact" data-i18n="ctaWork">Ver proyectos ↓</a></div>
+            <p class="live-now"><span class="live-dot" aria-hidden="true"></span><span data-i18n="liveNow">7 proyectos en vivo ahora mismo</span></p>
+          </div>
+
+          <div class="cluster" data-strings="star">
+            <span class="spotlight" aria-hidden="true"></span>
+            <p class="hint"><span class="hint-fine" data-i18n="hintFine">psst… esto se mueve. Arrastra las fotos, jala los hilos</span><span class="hint-touch" data-i18n="hintTouch">psst… toca los hilos</span></p>
+            <figure class="pc pc-main is-spot" data-pin data-href="https://angelesmastretta.com">
+              <span class="pushpin" aria-hidden="true"></span>
+              <span class="spot-tag" data-i18n="spot">★ Destacado</span>
+              <img decoding="async" class="shot" src="assets/proof/mastretta.webp" alt="Sitio oficial de Ángeles Mastretta, hecho por TUQO" data-i18n-attr="alt:altMastretta" width="1152" height="720" draggable="false">
+              <figcaption class="marker"><a class="pc-link" href="https://angelesmastretta.com" target="_blank" rel="noopener">Ángeles Mastretta <span aria-hidden="true">↗</span></a></figcaption>
+            </figure>
+            <figure class="pc pc-a" data-pin data-href="https://www.archivonexos.online">
+              <span class="pushpin" aria-hidden="true"></span>
+              <img decoding="async" class="shot" src="assets/proof/nexos.webp" alt="Archivo Nexos, el chatbot de IA sobre el archivo de la revista" data-i18n-attr="alt:altNexos" width="1152" height="720" draggable="false">
+              <figcaption class="marker"><a class="pc-link" href="https://www.archivonexos.online" target="_blank" rel="noopener">Archivo Nexos <span aria-hidden="true">↗</span></a></figcaption>
+            </figure>
+            <figure class="pc pc-b" data-pin data-href="https://mog-mx.vercel.app">
+              <span class="pushpin" aria-hidden="true"></span>
+              <img decoding="async" class="shot" src="assets/proof/mog.webp" alt="Sitio de MOG México" data-i18n-attr="alt:altMog" width="1152" height="720" draggable="false">
+              <figcaption class="marker"><a class="pc-link" href="https://mog-mx.vercel.app" target="_blank" rel="noopener">MOG México <span aria-hidden="true">↗</span></a></figcaption>
+            </figure>
+            <figure class="pc pc-c" data-pin data-href="https://manzanita-balseca-landing.lovable.app">
+              <span class="pushpin" aria-hidden="true"></span>
+              <img decoding="async" class="shot" src="assets/proof/manzanita.webp" alt="Sitio de Manzanita Balseca" data-i18n-attr="alt:altManzanita" width="1152" height="720" draggable="false">
+              <figcaption class="marker"><a class="pc-link" href="https://manzanita-balseca-landing.lovable.app" target="_blank" rel="noopener">Manzanita Balseca <span aria-hidden="true">↗</span></a></figcaption>
+            </figure>
+            <span class="ghost-hand" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M11 15V6.5a2 2 0 0 1 4 0V13m0-1.5v-2a2 2 0 0 1 4 0V14m0-2a2 2 0 0 1 4 0v3m0-1a2 2 0 0 1 4 0v6c0 5-3.5 9-8.5 9h-1.5c-3 0-5-1.5-6.8-4L4.6 20a2 2 0 0 1 3-2.6L11 20"/></svg></span>
+          </div>
+        </div>
+
+        <div class="badge">
+          <span class="badge-strap" aria-hidden="true"><span></span><span></span></span>
+          <span class="badge-hook" aria-hidden="true"></span>
+          <div class="badge-card">
+            <div class="badge-head"><span class="badge-slot" aria-hidden="true"></span><svg class="badge-logo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="210 380 1510 386" fill="none" stroke="currentColor" stroke-width="45"><defs><mask id="tuqo-qcut-badge" maskUnits="userSpaceOnUse" x="900" y="360" width="500" height="420"><rect x="900" y="360" width="500" height="420" fill="#fff" stroke="none"/><path d="M1139 593 L1467 901" stroke="#000" stroke-width="108"/></mask></defs><g class="lg lg-t"><path d="M217 417.5H505M359.5 396V724"/></g><g class="lg lg-u"><path d="M596.5 396V572A135.5 135.5 0 0 0 867.5 572V396"/></g><g class="lg lg-q"><circle cx="1130" cy="559" r="150" mask="url(#tuqo-qcut-badge)"/><path d="M1170 650L1206 618L1339 757L1271 757Z" fill="currentColor" stroke="none"/></g><g class="lg lg-o"><circle cx="1538" cy="559" r="150"/></g></svg></div>
+            <img decoding="async" class="badge-photo" src="assets/img/me-id.jpg" alt="Ulrich Mohrhardt Doger" width="440" height="484" draggable="false">
+            <p class="badge-name">Ulrich<br>Mohrhardt Doger</p>
+            <p class="badge-role" data-i18n="badgeRole">Fundador</p>
+            <p class="badge-meta" data-i18n="badgeMeta">Tehuacán, México</p>
+            <p class="badge-motto" data-i18n="badgeMotto">“Diseño a mano. Potencia con IA.”</p>
+            <span class="badge-barcode" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK: chalkboard ================= -->
+    <section class="impact chalk" id="impact" data-bg="#262728" data-label="Proyectos" data-i18n-attr="data-label:navWork">
+      <div class="wrap">
+        <p class="type-tag" data-i18n="workTag">Proyectos · todo está en vivo</p>
+        <h2 class="chalk-title" data-reveal="write" data-i18n="workTitle">Clientes reales. Trabajo en vivo.</h2>
+        <p class="chalk-sub" data-i18n="workSub">Cada proyecto de abajo está en línea ahora mismo. Haz clic y compruébalo.</p>
+
+        <figure class="star-quote" data-reveal="up">
+          <blockquote data-i18n="starQuote">“Tuqo transformó cómo mi marca aparece en internet. Profesional, rápido y con criterio propio.”</blockquote>
+          <figcaption data-i18n="starBy"><b>Ángeles Mastretta</b>, escritora</figcaption>
+        </figure>
+
+        <ul class="metrics">
+          <li class="metric">
+            <b class="metric-num" data-count>7</b>
+            <span class="metric-label" data-i18n="m1Label">proyectos en vivo</span>
+            <svg class="arrow" viewBox="0 0 90 60" aria-hidden="true"><path pathLength="1" d="M8 6 C 14 30, 34 44, 70 42 M58 32 L72 42 L58 52"/></svg>
+            <p class="chalk-note" data-reveal="write" data-i18n="m1Note">Una escritora, una revista, un vino, un refresco, una embotelladora, un político y un asistente de IA propio.</p>
+          </li>
+          <li class="metric">
+            <b class="metric-num" data-count>32,942</b>
+            <span class="metric-label" data-i18n="m2Label">textos que la IA de Nexos puede consultar</span>
+            <svg class="arrow" viewBox="0 0 90 60" aria-hidden="true"><path pathLength="1" d="M10 8 C 40 4, 60 20, 52 46 M42 38 L52 50 L62 38"/></svg>
+            <p class="chalk-note" data-reveal="write" data-i18n="m2Note">48 años de la revista, de 1978 a 2026.</p>
+          </li>
+          <li class="metric">
+            <b class="metric-num" data-count>4</b>
+            <span class="metric-label" data-i18n="m3Label">proyectos para un mismo cliente</span>
+            <svg class="arrow" viewBox="0 0 90 60" aria-hidden="true"><path pathLength="1" d="M6 30 C 20 6, 40 54, 60 26 S 80 20, 84 34 M74 26 L84 36 L72 42"/></svg>
+            <p class="chalk-note" data-reveal="write" data-i18n="m3Note">El grupo Balseca regresó: un vino, un refresco, una embotelladora y una campaña.</p>
+          </li>
+          <li class="metric">
+            <b class="metric-num" data-count>1</b>
+            <span class="metric-label" data-i18n="m4Label">recomendación que lo cambió todo</span>
+            <svg class="arrow" viewBox="0 0 90 60" aria-hidden="true"><path pathLength="1" d="M12 6 C 8 30, 30 50, 64 46 M54 36 L66 46 L54 56"/></svg>
+            <p class="chalk-note" data-reveal="write" data-i18n="m4Note">Ángeles Mastretta nos recomendó con Nexos.</p>
+          </li>
+        </ul>
+
+        <ul class="receipts works" aria-label="Proyectos en vivo" data-i18n-attr="aria-label:worksAria">
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://angelesmastretta.com" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/mastretta.webp" alt="Ángeles Mastretta" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cAuthorTag">Escritora</span>
+              <h3>Ángeles Mastretta</h3>
+              <p data-i18n="cAuthor">Sitio oficial de la autora de <i>Arráncame la vida</i>: biografía, obras, blogs y entrevistas. En español e inglés.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://www.archivonexos.online" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/nexos.webp" alt="Archivo Nexos" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cNexosTag">Revista · IA</span>
+              <h3>Archivo Nexos</h3>
+              <p data-i18n="cNexos">Un chatbot para la redacción de Nexos que responde solo con el archivo de la revista: 32,942 textos.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://casa-balseca.vercel.app" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/casa.webp" alt="Casa Balseca" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cCasaTag">Vino</span>
+              <h3>Casa Balseca</h3>
+              <p data-i18n="cCasa">Sitio de lanzamiento de un tinto de Ribera del Duero en ediciones limitadas y numeradas a mano.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://manzanita-balseca-landing.lovable.app" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/manzanita.webp" alt="Manzanita Balseca" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cManzTag">Refresco</span>
+              <h3>Manzanita Balseca</h3>
+              <p data-i18n="cManz">Sitio de marca de un refresco de manzana embotellado en Tehuacán, Puebla, desde 1929.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://mog-mx.vercel.app" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/mog.webp" alt="MOG México" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cMogTag">Embotelladora</span>
+              <h3>MOG México</h3>
+              <p data-i18n="cMog">Sitio de una planta en Tehuacán que embotella agua mineral con tu propia marca.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work" data-reveal="drop">
+            <a class="work-link" href="https://marco-balseca.vercel.app" target="_blank" rel="noopener">
+              <img decoding="async" class="shot" src="assets/proof/marco.webp" alt="Marco Balseca" width="1152" height="720" loading="lazy">
+              <span class="type-tag dark" data-i18n="cMarcoTag">Política</span>
+              <h3>Marco Balseca</h3>
+              <p data-i18n="cMarco">Página de un servidor público de Tehuacán: noticias, trayectoria, agenda y registro de voluntarios.</p>
+              <p class="work-url"><span data-i18n="visit">Ver el sitio en vivo</span> <span aria-hidden="true">↗</span></p>
+            </a>
+          </li>
+          <li class="receipt work agent" data-reveal="drop">
+            <div class="ally-shots" aria-label="Capturas de Ally en WhatsApp" data-i18n-attr="aria-label:allyAria">
+              <img decoding="async" src="assets/proof/ally-start.webp" alt="" width="520" height="809" loading="lazy">
+              <img decoding="async" src="assets/proof/ally-chat.webp" alt="" width="520" height="956" loading="lazy">
+              <img decoding="async" src="assets/proof/ally-list.webp" alt="" width="520" height="943" loading="lazy">
+            </div>
+            <span class="type-tag dark" data-i18n="allyTag">Producto propio · en beta</span>
+            <h3 data-i18n="allyTitle">Ally, un asistente que vive en WhatsApp</h3>
+            <p data-i18n="allyText">Hecho con Mark, desde Taiwán. Le mandas un audio con todo lo pendiente y Ally lo ordena en tareas y proyectos, agenda citas, te manda un resumen a las 7 am y arma tu plan del día. En beta con sus primeros usuarios.</p>
+            <p class="work-url"><a href="https://mark120135.github.io/ally-website/ally-landing-page.html" target="_blank" rel="noopener"><span data-i18n="allyLink">Ver la primera versión, para Taiwán (en chino)</span> <span aria-hidden="true">↗</span></a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS: call sheet ================= -->
+    <section class="tldr chalk" id="tldr" data-bg="#262728" data-label="Proceso" data-i18n-attr="data-label:navProcess">
+      <article class="callsheet lit" data-reveal="up">
+        <span class="tape-red" aria-hidden="true"></span>
+        <header class="cs-head">
+          <h2><span class="cs-sans" data-i18n="csTitle">Cómo trabajamos</span> <span class="cs-serif" data-i18n="csSub">en cinco escenas</span></h2>
+          <p class="type-tag dark">Prod. TUQO · Dir. Ulrich Mohrhardt Doger</p>
+        </header>
+        <ol class="cs-rows">
+          <li><span class="cs-sc" data-i18n="sc1">Esc. 01 · La llamada</span><p data-i18n="sc1t">Platicamos de tu negocio, de tus clientes y de lo que necesitas que haga tu sitio o tu agente.</p></li>
+          <li><span class="cs-sc" data-i18n="sc2">Esc. 02 · La propuesta</span><p data-i18n="sc2t">Te mandamos alcance, precio y fechas claros. Sin letras chiquitas.</p></li>
+          <li><span class="cs-sc" data-i18n="sc3">Esc. 03 · El diseño</span><p data-i18n="sc3t">Bocetamos a mano antes de tocar la computadora. Tú apruebas la dirección.</p></li>
+          <li><span class="cs-sc" data-i18n="sc4">Esc. 04 · La construcción</span><p data-i18n="sc4t">Construimos el sitio, el agente de IA y las automatizaciones con la información real de tu negocio.</p></li>
+          <li><span class="cs-sc" data-i18n="sc5">Esc. 05 · El lanzamiento</span><p data-i18n="sc5t">Publicamos, te enseñamos a usarlo y seguimos contigo después.</p></li>
+        </ol>
+        <p class="cs-ai" data-i18n="csAi"><b>Cómo usamos la IA:</b> la IA escribe código rápido. Lo demás es trabajo humano: bocetos a mano, negociación, la información y los casos reales de tu negocio, y la automatización de punta a punta.</p>
+        <p class="cs-more" data-i18n="csMore">Mira los servicios ↓</p>
+      </article>
+    </section>
+
+    <!-- ================= SERVICES: cork board ================= -->
+    <section class="chapter problem" id="problem" data-bg="#1E4D33" data-label="Servicios" data-i18n-attr="data-label:navServices">
+      <div class="wrap">
+        <div class="cork lit" data-reveal="up">
+          <p class="type-tag on-cork" data-i18n="svcTag">Servicios</p>
+          <h2 class="sticker-title" data-i18n="svcTitle">Lo que hacemos</h2>
+          <div class="origin">
+            <span class="clip-mini" aria-hidden="true"></span>
+            <p data-i18n="svcOrigin">Un estudio pequeño a propósito: tratas <strong>directo</strong> con quien diseña y construye tu proyecto.</p>
+          </div>
+          <div class="cork-notes">
+            <div class="note yellow" data-reveal="slap">
+              <span class="pushpin" aria-hidden="true"></span>
+              <p class="note-tag" data-i18n="s1Tag">01 · Sitios web</p>
+              <p class="note-text" data-i18n="s1">A tu medida, rápidos y en español e inglés</p>
+            </div>
+            <div class="note pink" data-reveal="slap">
+              <span class="pushpin" aria-hidden="true"></span>
+              <p class="note-tag" data-i18n="s2Tag">02 · Agentes de IA</p>
+              <p class="note-text" data-i18n="s2">Atienden a tus clientes por WhatsApp e Instagram</p>
+            </div>
+            <div class="note mint" data-reveal="slap">
+              <span class="pushpin" aria-hidden="true"></span>
+              <p class="note-tag" data-i18n="s3Tag">03 · Automatizaciones</p>
+              <p class="note-text" data-i18n="s3">Las tareas repetitivas se hacen solas</p>
+            </div>
+          </div>
+        </div>
+
+        <article class="v0" data-reveal="up">
+          <span class="margin-line" aria-hidden="true"></span>
+          <p class="type-tag dark" data-i18n="whyTag">Por qué TUQO</p>
+          <h3 data-i18n="whyTitle">Lo que nos hace distintos</h3>
+          <dl>
+            <dt data-i18n="w1">Trato directo</dt><dd data-i18n="w1t">Hablas con quien diseña y construye, sin intermediarios.</dd>
+            <dt data-i18n="w2">Diseño a mano</dt><dd data-i18n="w2t">Cada proyecto empieza con bocetos en papel.</dd>
+            <dt data-i18n="w3">IA que sí ayuda</dt><dd data-i18n="w3t">La usamos donde ahorra tiempo de verdad: atención, búsqueda y automatización.</dd>
+          </dl>
+          <button class="stamp" type="button" aria-label="Hecho a mano" data-i18n="stamp" data-i18n-attr="aria-label:stampAria">Hecho a mano</button>
+          <p class="v0-next" data-i18n="v0Next">…pasa al taller ↓</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= STUDIO: the desk at night ================= -->
+    <section class="chapter build" id="build" data-bg="#10142A" data-label="Taller" data-i18n-attr="data-label:navStudio">
+      <div class="wrap">
+        <header class="build-head">
+          <div>
+            <p class="type-tag" data-i18n="buildTag">El taller</p>
+            <h2 class="chalk-title" data-reveal="write" data-i18n="buildTitle">Hecho a mano, una noche a la vez.</h2>
+          </div>
+          <p class="chalk-aside" data-reveal="write"><span class="hint-fine" data-i18n="deskFine">Arrastra la lámpara. Tócala para apagarla. Mueve lo que quieras.</span><span class="hint-touch" data-i18n="deskTouch">Toca la lámpara, el celular y el sobre.</span></p>
+        </header>
+      </div>
+
+      <div class="desk" style="--px: 50%; --py: 64%;">
+        <div class="desk-grain" aria-hidden="true"></div>
+        <img loading="lazy" decoding="async" class="plant deco" src="assets/img/terrarium.webp" alt="" width="600" height="337">
+        <div class="keyboard-dk deco" aria-hidden="true"></div>
+        <div class="mouse deco" aria-hidden="true"></div>
+        <div class="cup obj" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/img/coffee.webp" alt="" width="454" height="275" draggable="false"><span class="steam s1"></span><span class="steam s2"></span></div>
+        <div class="spill deco" aria-hidden="true"></div>
+        <div class="pen-dk deco" aria-hidden="true"></div>
+        <div class="pencil-dk deco" aria-hidden="true"></div>
+        <span class="candy obj c1" aria-hidden="true"></span><span class="candy obj c2" aria-hidden="true"></span><span class="candy obj c3" aria-hidden="true"></span><span class="candy obj c4" aria-hidden="true"></span><span class="candy obj c5" aria-hidden="true"></span>
+        <span class="tack t1" aria-hidden="true"></span><span class="tack t2" aria-hidden="true"></span><span class="tack t3" aria-hidden="true"></span>
+        <span class="mini-note obj n1" aria-hidden="true"></span><span class="mini-note obj n2" aria-hidden="true"></span>
+
+        <figure class="monitor">
+          <div class="bezel">
+            <div class="screen">
+              <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>angelesmastretta.com</p></div>
+              <img decoding="async" class="screen-shot" src="assets/proof/mastretta.webp" alt="" width="1152" height="720" loading="lazy" draggable="false">
+            </div>
+            <button class="power" type="button" aria-label="Apagar y prender el monitor" data-i18n-attr="aria-label:powerAria"></button>
+          </div>
+          <span class="stand" aria-hidden="true"></span>
+          <figcaption class="obj sticky monitor-note">
+            <p class="obj-meta" data-i18n="scene1">Escena 01</p>
+            <h3>Ángeles Mastretta</h3>
+            <p class="obj-text" data-i18n="scene1t">La autora de <i>Arráncame la vida</i> → <strong>nuestro cliente más grande</strong></p>
+            <a class="obj-link" href="https://angelesmastretta.com" target="_blank" rel="noopener" data-i18n="seeSite">Ver el sitio ↗</a>
+          </figcaption>
+        </figure>
+
+        <article class="obj phone">
+          <div class="phone-screen">
+            <p class="obj-meta on-screen" data-i18n="scene2">Escena 02</p>
+            <h3>Archivo Nexos</h3>
+            <p class="bubble in" data-i18n="bubbleIn">“¿Qué ha publicado Nexos sobre la elección de 2006?”</p>
+            <p class="bubble out" hidden data-i18n="bubbleOut">Solo respondo con el archivo de la revista: 32,942 textos, de 1978 a 2026.</p>
+            <p class="typing" hidden aria-hidden="true"><span></span><span></span><span></span></p>
+            <button class="phone-send" type="button" aria-expanded="false" data-i18n="ask">Pregúntale al archivo</button>
+          </div>
+          <a class="phone-caption" href="https://www.archivonexos.online" target="_blank" rel="noopener" data-i18n="tryArchive">Prueba el archivo ↗</a>
+        </article>
+
+        <article class="obj sheet flow-sheet">
+          <img loading="lazy" decoding="async" class="binder-photo small" src="assets/img/binder.webp" alt="" width="420" height="420">
+          <p class="obj-meta" data-i18n="scene3">Escena 03</p>
+          <h3 data-i18n="flowTitle">Cómo funciona el archivo</h3>
+          <ol class="mini-flow">
+            <li data-i18n="flow1">32,942 textos, 1978–2026</li>
+            <li data-i18n="flow2">Ordenados por autor, sección y década</li>
+            <li data-i18n="flow3">Responde solo con el archivo</li>
+          </ol>
+          <p class="obj-text" data-i18n="flowText">Para la redacción de Nexos → <strong>48 años, a una pregunta</strong></p>
+        </article>
+
+        <article class="obj notebook">
+          <span class="spiral" aria-hidden="true"></span>
+          <p class="obj-meta" data-i18n="scene4">Escena 04</p>
+          <h3 data-i18n="nbTitle">Grupo Balseca</h3>
+          <p class="obj-text hand-ink" data-i18n="nbText">Vino → refresco → embotelladora → campaña = <strong>4 proyectos, 1 cliente</strong></p>
+          <p class="hand-ink scribble" data-i18n="nbScribble">regresaron por más</p>
+          <p class="nb-links"><a href="https://casa-balseca.vercel.app" target="_blank" rel="noopener">Casa Balseca ↗</a> <a href="https://manzanita-balseca-landing.lovable.app" target="_blank" rel="noopener">Manzanita ↗</a> <a href="https://marco-balseca.vercel.app" target="_blank" rel="noopener">Marco Balseca ↗</a> <a href="https://mog-mx.vercel.app" target="_blank" rel="noopener">MOG ↗</a></p>
+        </article>
+
+        <article class="obj clipping">
+          <p class="obj-meta" data-i18n="scene5">Escena 05</p>
+          <h3 class="clip-head">Ally</h3>
+          <p class="obj-text"><span data-i18n="clipText">Nuestro asistente de IA en WhatsApp →</span> <span class="circled"><strong data-i18n="clipCircle">en beta</strong><svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M10 34 C 10 6, 190 4, 192 30 C 194 56, 20 60, 12 30 C 8 18, 40 8, 70 8"/></svg></span></p>
+        </article>
+
+        <article class="obj envelope">
+          <div class="env-letter" aria-hidden="true"><p data-i18n="envLetter">¿Y si el siguiente proyecto es el tuyo?</p></div>
+          <div class="env-body">
+            <p class="obj-meta" data-i18n="scene6">Escena 06 · Tu turno</p>
+            <h3 data-i18n="envTitle">Tu proyecto</h3>
+            <p class="obj-text" data-i18n="envText">Sitio, agente o automatización → <strong>cotización gratis</strong></p>
+            <a class="obj-link" href="mailto:solutions.umd@gmail.com?subject=Proyecto%20con%20TUQO" data-i18n="writeUs">Escríbenos ↗</a>
+            <p class="env-to" data-i18n="envTo">Para: TUQO</p>
+          </div>
+          <span class="env-flap" aria-hidden="true"></span>
+          <span class="seal" aria-hidden="true">T</span>
+          <button class="env-btn" type="button" aria-expanded="false" data-i18n="envOpen">Abrir el sobre</button>
+        </article>
+
+        <div class="darkness" aria-hidden="true"></div>
+        <div class="pool" aria-hidden="true"></div>
+        <div class="cone" aria-hidden="true"><span></span></div>
+        <svg class="lamp-cord" aria-hidden="true"><path d=""/></svg>
+        <button class="lamp" type="button" aria-pressed="true" aria-label="Lámpara: apagar"><span class="bulb" aria-hidden="true"></span></button>
+      </div>
+    </section>
+
+    <!-- ================= CASE: the evidence board ================= -->
+    <section class="chapter case" id="case" data-bg="#141416" data-label="Caso" data-i18n-attr="data-label:navCase">
+      <div class="case-pin">
+        <div class="lamp-pool" aria-hidden="true"></div>
+        <img loading="lazy" decoding="async" class="prop mug-photo fg" src="assets/img/coffee.webp" alt="" width="454" height="275">
+        <div class="prop pen" aria-hidden="true"></div>
+        <article class="board lit">
+          <img loading="lazy" decoding="async" class="binder-photo" src="assets/img/binder.webp" alt="" width="420" height="420">
+          <header class="board-head">
+            <div>
+              <p class="type-tag dark" data-i18n="caseTag">Caso de estudio</p>
+              <h2 class="case-title"><span class="ct-sans">Mastretta</span> <span class="ct-serif">&amp; Nexos</span></h2>
+            </div>
+            <div class="board-brief"><p data-i18n="caseBrief">Cliente: <strong>Ángeles Mastretta</strong>, autora de <i>Arráncame la vida</i>. Hicimos su sitio oficial. Después ella nos recomendó con <strong>Nexos</strong>, donde ha publicado 876 textos.</p><p class="hint"><span class="hint-fine" data-i18n="caseFine">Mueve las pruebas. Jala el hilo.</span><span class="hint-touch" data-i18n="caseTouch">Toca el hilo.</span></p></div>
+          </header>
+
+          <div class="evidence" data-strings="chain">
+            <figure class="ev pc" data-pin>
+              <span class="pushpin" aria-hidden="true"></span>
+              <img decoding="async" class="shot" src="assets/proof/mastretta.webp" alt="" width="1152" height="720" loading="lazy" draggable="false">
+              <figcaption data-i18n="ev1"><span class="ev-tag">Hecho</span>Su sitio oficial: biografía (con audio), obras, blogs y entrevistas. ES / EN.</figcaption>
+            </figure>
+            <figure class="ev ev-paper" data-pin>
+              <span class="pushpin" aria-hidden="true"></span>
+              <span class="ev-tag" data-i18n="ev2Tag">Lo que construimos</span>
+              <ol class="steps">
+                <li data-i18n="ev2a">48 años de Nexos: 32,942 textos</li>
+                <li data-i18n="ev2b">Ordenados por autor, sección y década</li>
+                <li data-i18n="ev2c">Un chatbot que responde solo con el archivo</li>
+              </ol>
+            </figure>
+            <figure class="ev pc" data-pin>
+              <span class="pushpin" aria-hidden="true"></span>
+              <img decoding="async" class="shot" src="assets/proof/nexos.webp" alt="" width="1152" height="720" loading="lazy" draggable="false">
+              <figcaption><span data-i18n="ev3"><span class="ev-tag">Después</span>La redacción le pregunta al archivo en español.</span> <a href="https://www.archivonexos.online" target="_blank" rel="noopener" data-i18n="tryIt">Pruébalo ↗</a></figcaption>
+            </figure>
+            <figure class="ev ev-note" data-pin>
+              <span class="pushpin" aria-hidden="true"></span>
+              <blockquote data-i18n="ev4">“Profesional, rápido y con criterio propio.”</blockquote>
+              <figcaption data-i18n="ev4By">Ángeles Mastretta · y luego nos recomendó con Nexos</figcaption>
+            </figure>
+          </div>
+
+          <div class="board-foot">
+            <div class="delta">
+              <span class="stamp" data-i18n="impact">Impacto</span>
+              <p class="delta-num">32,942</p>
+              <p class="delta-label" data-i18n="deltaLabel">textos, a una pregunta</p>
+            </div>
+            <ul class="role" aria-label="Lo que hicimos" data-i18n-attr="aria-label:roleAria">
+              <li data-i18n="r1">Estrategia</li><li data-i18n="r2">Diseño a mano</li><li data-i18n="r3">Desarrollo</li><li data-i18n="r4">IA y automatización</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="chapter next" id="next" data-bg="#2340B8" data-label="Contacto" data-i18n-attr="data-label:navContact">
+      <svg class="prop star-fg fg" data-speed="1.2" viewBox="0 0 160 160" aria-hidden="true"><polygon points="80,4 96,46 140,22 118,64 158,80 118,96 140,138 96,114 80,156 64,114 20,138 42,96 2,80 42,64 20,22 64,46"/></svg>
+      <svg class="prop star-bg" data-speed="-0.3" viewBox="0 0 160 160" aria-hidden="true"><polygon points="80,4 96,46 140,22 118,64 158,80 118,96 140,138 96,114 80,156 64,114 20,138 42,96 2,80 42,64 20,22 64,46"/></svg>
+      <div class="wrap">
+        <p class="type-tag on-blue" data-i18n="ctTag">Contacto</p>
+        <h2 class="sticker-title yellow" data-i18n="ctTitle">¿Hacemos el tuyo?</h2>
+
+        <ol class="lessons">
+          <li class="note yellow" data-reveal="slap"><span class="pushpin" aria-hidden="true"></span><h3 data-i18n="q1">¿Cuánto cuesta?</h3><p data-i18n="a1">Depende del alcance. La cotización es gratis y sin compromiso.</p></li>
+          <li class="note pink" data-reveal="slap"><span class="pushpin" aria-hidden="true"></span><h3 data-i18n="q2">¿En qué idiomas?</h3><p data-i18n="a2">En español y en inglés, como el sitio de Ángeles Mastretta.</p></li>
+          <li class="note mint" data-reveal="slap"><span class="pushpin" aria-hidden="true"></span><h3 data-i18n="q3">¿Solo hacen sitios?</h3><p data-i18n="a3">También agentes de IA para WhatsApp e Instagram, y automatizaciones.</p></li>
+        </ol>
+
+        <div class="next-grid">
+          <article class="letter lit" data-reveal="up">
+            <img loading="lazy" decoding="async" class="binder-photo small" src="assets/img/binder.webp" alt="" width="420" height="420">
+            <p class="type-tag dark red" data-i18n="letterTag">Cotiza tu proyecto</p>
+            <p class="letter-hi" data-i18n="letterHi">Hola,</p>
+            <p data-i18n="letter1">Cuéntanos qué hace tu negocio y qué necesitas. Te respondemos con una propuesta clara: alcance, precio y fechas.</p>
+            <p data-i18n="letter2">La cotización es gratis y sin compromiso.</p>
+            <p class="letter-sign">Ulrich · TUQO</p>
+            <a class="btn letter-cta" href="mailto:solutions.umd@gmail.com?subject=Proyecto%20con%20TUQO" data-i18n="letterCta">Escríbenos <span aria-hidden="true">→</span></a>
+          </article>
+
+          <div class="contact" data-reveal="up">
+            <div class="contact-body">
+              <p class="type-tag" data-i18n="contactTag">Escríbenos</p>
+              <a href="mailto:solutions.umd@gmail.com?subject=Proyecto%20con%20TUQO">solutions.umd@gmail.com</a>
+              <a href="https://tuqo.agency" target="_blank" rel="noopener">tuqo.agency</a>
+            </div>
+          </div>
+        </div>
+
+        <footer class="end">
+          <p class="end-line" data-i18n="endLine">¿Tu proyecto es el siguiente?</p>
+          <p class="end-meta">© 2026 TUQO · Ulrich Mohrhardt Doger</p>
+          <p class="end-credit" data-i18n="credit">Foto del fólder: “<a href="https://commons.wikimedia.org/wiki/File:Manila_folder.jpg" target="_blank" rel="noopener">Manila folder</a>” de allispossible.org.uk, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>, sin fondo y con color ajustado.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <nav class="chapters is-hidden" aria-label="Secciones" data-i18n-attr="aria-label:navAria">
+    <a class="brand" href="#top" aria-label="TUQO, volver arriba" data-i18n-attr="aria-label:brandAria"><svg class="brand-logo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="210 380 1510 386" fill="none" stroke="currentColor" stroke-width="45"><defs><mask id="tuqo-qcut-nav" maskUnits="userSpaceOnUse" x="900" y="360" width="500" height="420"><rect x="900" y="360" width="500" height="420" fill="#fff" stroke="none"/><path d="M1139 593 L1467 901" stroke="#000" stroke-width="108"/></mask></defs><g class="lg lg-t"><path d="M217 417.5H505M359.5 396V724"/></g><g class="lg lg-u"><path d="M596.5 396V572A135.5 135.5 0 0 0 867.5 572V396"/></g><g class="lg lg-q"><circle cx="1130" cy="559" r="150" mask="url(#tuqo-qcut-nav)"/><path d="M1170 650L1206 618L1339 757L1271 757Z" fill="currentColor" stroke="none"/></g><g class="lg lg-o"><circle cx="1538" cy="559" r="150"/></g></svg></a>
+    <span class="now" aria-live="polite">Inicio</span>
+    <button class="sound" type="button" aria-pressed="false" aria-label="Efectos de sonido" data-i18n-attr="aria-label:soundAria"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16 9c1.5 1.5 1.5 4.5 0 6M18.5 6.5c3 3 3 8 0 11"/><path class="mute" d="M16 9l5 6M21 9l-5 6"/></svg></button>
+    <ul>
+      <li><a href="#impact" data-target="impact" data-i18n="navWork">Proyectos</a></li>
+      <li><a href="#tldr" data-target="tldr" data-i18n="navProcess">Proceso</a></li>
+      <li><a href="#problem" data-target="problem" data-i18n="navServices">Servicios</a></li>
+      <li><a href="#build" data-target="build" data-i18n="navStudio">Taller</a></li>
+      <li><a href="#case" data-target="case" data-i18n="navCase">Caso</a></li>
+      <li><a href="#next" data-target="next" data-i18n="navContact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
