@@ -131,6 +131,7 @@ main { position: relative; z-index: 1; overflow-x: clip; }
 .note { position: relative; padding: 26px 22px 22px; background-color: var(--yellow); color: var(--ink); box-shadow: var(--shadow-sm); list-style: none; }
 .note.pink { background-color: var(--pink); }
 .note.mint { background-color: var(--mint); }
+.note.sky { background-color: #A9D4F5; }
 .note-tag { font-family: var(--f-type); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
 .note-text { margin-top: 6px; font-family: var(--f-chalk); font-size: clamp(23px, 2.1vw, 28px); line-height: 1.1; }
 
@@ -1186,3 +1187,49 @@ img.id-photo { height: auto; aspect-ratio: 1 / 1; }
 .problem { background-image: none; }
 .letter-cta { margin-top: 18px; }
 .byline { white-space: normal !important; }
+
+/* ===================== Client trust pass ===================== */
+/* "by Ulrich" a step smaller: TUQO is the brand */
+.t-serif { font-size: clamp(46px, 5.4vw, 84px); }
+@media (max-width: 520px) { .t-serif { font-size: 12.5vw; } }
+
+/* WhatsApp is the main way in */
+.btn-wa { background: var(--ink); }
+.btn-wa:hover { background: #128C4A; }
+
+/* More than one voice */
+.voices { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px clamp(24px, 4vw, 56px); max-width: 880px; }
+.voices li { padding-left: clamp(18px, 2vw, 28px); border-left: 4px solid rgba(255, 210, 63, .55); }
+.voices blockquote { margin: 0; font-family: var(--f-serif); font-style: italic; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; color: #fff; }
+.voices p { margin-top: 10px; font-family: var(--f-type); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--yellow); }
+.voices p b { font-family: var(--f-sans); font-size: 14px; letter-spacing: 0; text-transform: none; }
+@media (max-width: 640px) { .voices { grid-template-columns: minmax(0, 1fr); } }
+
+/* Services: a next step beside "why TUQO", so the board is not left half empty */
+.svc-row { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: clamp(32px, 5vw, 72px); align-items: center; margin-top: -90px; }
+.svc-row .v0 { margin: 0; }
+.svc-cta { align-self: end; max-width: 460px; padding: 34px 30px 30px; border-radius: 14px; background: var(--ink); color: #fff; box-shadow: var(--shadow); rotate: -1.4deg; }
+.svc-cta-title { margin-top: 10px; font-size: clamp(22px, 2.2vw, 28px); font-weight: 800; line-height: 1.2; }
+.svc-cta-note { margin-top: 10px; font-size: 15px; color: #CFCFCF; }
+.svc-cta .btn { margin-top: 22px; background: var(--yellow); color: var(--ink); }
+.svc-cta .btn:hover { background: #fff; }
+@media (max-width: 860px) {
+  .svc-row { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }
+  .svc-row .v0 { margin: 0 auto; }
+  .svc-cta { order: 2; max-width: none; rotate: 0deg; }
+}
+
+/* Contact */
+.letter-ctas { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.letter-ctas .letter-cta { margin-top: 0; }
+
+/* Quote button always in the nav */
+.chapters .nav-cta { display: inline-flex; align-items: center; min-height: 44px; margin-left: 4px; padding: 0 18px; border-radius: 999px; background: var(--yellow); color: var(--ink); font-size: 14px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.chapters .nav-cta:hover { background: #fff; }
+@media (max-width: 820px) { .chapters { padding-right: 6px; } }
+@media (min-width: 821px) and (max-width: 1000px) { .chapters ul a { padding: 0 9px; font-size: 13px; } }
+/* four services on the board */
+.cork-notes { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.cork-notes .note:nth-child(4) { rotate: 2.5deg; margin-top: 20px; }
+@media (max-width: 1100px) { .cork-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .cork-notes { grid-template-columns: minmax(0, 1fr); } }

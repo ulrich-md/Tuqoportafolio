@@ -7,12 +7,12 @@ Sitio estático (HTML + CSS + JS, sin build) para presentar TUQO a clientes. Es 
 | Sección | Qué muestra |
 |---|---|
 | **Portada** (fólder) | Qué hace TUQO, cliente destacado, cotización gratis y polaroids que abren cada sitio |
-| **Proyectos** (pizarra) | Testimonio de Ángeles Mastretta, cifras y los 6 sitios en vivo + Ally |
+| **Proyectos** (pizarra) | Testimonios de Ángeles Mastretta, Grupo Balseca y Nexos, cifras y los 6 sitios en vivo + Ally |
 | **Proceso** (call sheet) | Cómo trabajamos, en 5 pasos, y cómo usamos la IA |
-| **Servicios** (corcho) | Sitios web, agentes de IA y automatizaciones; por qué TUQO |
+| **Servicios** (corcho) | Sitios web, agentes de IA, automatizaciones y software a la medida; por qué TUQO y botón para cotizar |
 | **Taller** (escritorio de noche) | Los proyectos como objetos que se pueden mover |
 | **Caso** (expediente) | Mastretta & Nexos |
-| **Contacto** | Preguntas frecuentes, carta y correo |
+| **Contacto** | Preguntas frecuentes, carta, WhatsApp (238 150 1095) y correo |
 
 ## Idiomas
 

@@ -430,7 +430,7 @@
     if (canPin) casePin.classList.add('is-p');
     const tl = gsap.timeline({
       scrollTrigger: canPin
-        ? { trigger: casePin, start: 'top top', end: '+=140%', pin: true, scrub: 1, refreshPriority: 1 }
+        ? { trigger: casePin, start: 'top top', end: '+=100%', pin: true, scrub: 1, refreshPriority: 1 }
         : { trigger: '.evidence', start: 'top 80%', end: 'bottom 45%', scrub: 1 },
     });
     const evs = gsap.utils.toArray('.evidence .ev');
